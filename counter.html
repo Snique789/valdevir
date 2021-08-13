@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bah guri</title>
+		<style type="text/css">
+			*{
+				font-family:Georgia;
+				font-weight: bolder;
+			}
+			header{
+				display: flex;
+				justify-content: space-between;
+			}
+			#aa{
+			}
+			.itens{
+				height: 75px;
+				width: 100px;
+				margin-right: 10px;
+				position: relative;
+				border-radius: 50px;
+			}
+			.numero{
+				position: absolute;
+				bottom: -15px;
+				right: 5px;
+				color: white;
+				text-shadow:-5px 5px 5px black ;
+			}
+			#loja{
+				display: flex;
+			}
+			.itenimg{
+				margin: 0 auto 0 auto;
+				max-width: 100px;
+				width: auto;
+				height: 100%;
+				border-radius: 50px;
+			}
+			#valdecute{
+				width: 400px;
+				cursor: pointer;
+			}
+			#teste{
+				position: absolute;
+				left: -50px;
+				display: none;
+			}
+			#coins{
+				color: white;
+				position: absolute;
+				width: 100%;
+				background: none;
+				font-size: 1.7rem;
+			}
+			#modal{
+				display: none; /* Hidden by default */
+				position: fixed; /* Stay in place */
+				right: 0;
+				top: 0;
+				width: 100%; /* Full width */
+				height: 100%; /* Full height */
+				overflow: auto; /* Enable scroll if needed */
+				background-color: rgb(0,0,0); /* Fallback color */
+				background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+			}
+			#content {
+				border: #612d00 10px solid;
+				background: #edd96b;
+				border-spacing: 50px;
+				background-size: 100%;
+				margin: 50px auto;
+				padding: 10px;
+				width: 75%;
+				min-height: 500px;
+				display: flex;
+				justify-content: space-around;
+				flex-wrap: wrap;
+			}
+			#dindin{
+				width: 300px;
+				text-align: right;
+				background: none;
+			}
+			.close {
+			  color: #363636;
+			  margin-left: 97%;
+			  text-align: right;
+			  font-size: 2rem;
+			  display: block;
+			  font-weight: bold;
+			  
+			}
+			.close:hover,
+			.close:focus {
+			  color: white;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+			.imgmucholoka{
+				width: 200px;
+				height: 150px;
+			}
+			#lojinha{
+				justify-content: space-around;
+				display: flex;
+				padding-left: 5%;
+				flex-wrap: wrap;
+				width: 100%;
+			}
+			p{
+				color: black;
+			}
+			.buy{
+				color: white;
+				width: 100px;
+				height: 25px;
+				border-radius: 2px;
+				cursor: pointer;
+				padding: 10px 5px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				background: tomato;
+			}
+			.buy:hover{
+				background:#FF3535;
+			}
+			.critical{
+				animation:critico 1s;
+				opacity: 0;
+				position: absolute;
+				bottom: 500px;
+				right: 400px;
+				color: white;
+				font-size: 3rem;
+			}
+			.pontos{
+				animation:cabelos 3s;
+				opacity: 0;
+				position: fixed;
+				bottom: 500px;
+				right: 300px;
+				color: white;
+				font-family: serif;
+				font-weight: bold;
+				font-size: 2.3rem;
+			}
+			@keyframes cabelos {
+				from{
+					top: 150px;
+			    	opacity: 1;
+				}
+				to{
+					top: -50px;
+					opacity: 0;
+				}
+			}
+			@keyframes critico {
+			    from{
+			    	top: 20px;
+			    	opacity: 1;
+			    }
+				to{
+					top: -80px;
+					opacity: 0;
+				}
+			}
+			.descricao{
+				width: 270px;
+				height: 150px;
+				margin-left: 10px;
+				text-align: left;
+				font-size: 16px;
+				color: #363636;
+			}
+			#shop{
+				position: absolute;
+				left: 20px;
+				bottom: 20px;
+				border: none;
+				outline: 0;
+				border-radius: 5px;
+				cursor: pointer;
+				background: none;
+			}
+			#imgBtn{
+				width: 150px;
+				height: 75px;
+			}
+			#cod{
+				outline: 0;
+				border: 2px solid gray;
+				border-radius: 5px;
+				padding: 5px;
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+			}
+			#buttonhidden{
+				display: none;
+			}
+			.powerups{
+				margin-top: 10px;
+				width: 95%;
+				height: 150px;
+				display: flex;
+				position: relative;
+				border: 2px solid #612d00;
+			}
+			body{
+				touch-action: manipulation;
+				background-image: "img/background.png";
+				background-size: 60% 670px;
+			}
+			#up{
+				display: none;
+			}
+			.il111{
+				display: none;
+				width: 100px;
+				height: 100px;
+				border: 1px black solid;
+			}
+			#xzin{
+				width: 50px;
+				height: 50px;
+			}
+			#btnUpgrades{
+				width: 20%;
+				cursor: pointer;
+				background:#FF3535;
+				color: white;
+			}
+			#fiat{
+				display: none;
+			}
+			.prices{
+				font-size: 20px;
+				position: absolute;
+				right: 10px;
+				top: 0;
+			}
+			#abobora{
+				width: 200px;
+				height: 150px;
+			}
+			.imgmucholokaA{
+				max-width: 200px;
+				width: auto;
+				margin: 0 auto 0 auto;
+				height: 150px;
+			}
+			#btnSkin{
+				width: 100px;
+				height: 40px;
+				border: none;
+				position: absolute;
+				bottom: 50px;
+				right: 625px;
+				outline: 0;
+				border-radius: 2px;
+				border: red 2px solid;
+				background:#FF3535;
+				color: white;
+			}
+		</style>
+	</head>
+	<body id="body" background="img/background.png">
+		<center>
+			<header id="consumiveis">
+				<div id="loja">
+					<div class="itens" onclick="ativarPaçoca()" alt="comer paçoca">
+						<img class="itenimg" src="img/dog.jpg" alt="">
+						<p class="numero" id="boamemo">paçoca</p>
+					</div>
+					<div class="itens">
+						<img class="itenimg" src="img/capivar.jpg" alt="">
+						<p class="numero" id="gelada">cocas</p>
+					</div>
+					<div class="itens" id="machete">
+						<img class="itenimg" src="img/facao.jpg" alt="">
+						<p class="numero" id="sharpness">0</p>
+					</div>
+					<div class="itens" id="fiat">
+						<img class="itenimg" src="img/fiat.jpg" alt="">
+						<p class="numero" id="toro">0</p>
+					</div>
+				</div>
+				<div class="itens" id="dindin">
+					<p id="teste"></p>
+					<p id="coins">Cabelos</p>
+				</div>
+			</header>
+			<div id="aa">
+				<img onclick="bahGuri()" id="valdecute" src="img/professorciencias.png" alt="">
+			</div>
+			<button id="btnSkin" onclick="evolv()">TROCAR</button>
+			<div>
+				<button onclick="shop()" id="shop"><img src="img/guri.png" id="imgBtn" alt=""></button>
+			</div>
+			<form>
+				<input id="cod" type="text" name="cod"/>
+				<button id="buttonhidden" onclick="enviar()">Enviar</button>
+			</form>
+			<div id="modal">
+				<div id="content">
+					<div class="close" onclick="close()">&times;</div>
+					<section id="lojinha">
+						<div class="powerups" onclick="compararcoquinhagelada()" id="coca">
+							<img class="imgmucholoka" src="img/capivar.jpg" alt="">
+							<p class="descricao">As duas capivaras que Valdevir anteriormente as caçou, veio ajudar-lo em sua missão comendo cabelos para o ele (+1 cabelos por click)</p>
+							<p id="priceCapivar" class="prices">0</p>
+							<div class="buy" onclick="compararcoquinhagelada()">COMPRAR</div>
+						</div>
+						<div class="powerups" id="paçoca">
+							<img class="imgmucholoka" src="img/dog.jpg" alt="">
+							<p class="descricao">Fiel escudeiro do Valdevir onde ele adota uma vida secreta com uma bike e fica perseguindo as pessoas para pegar seus cabelos para seu dono (+1 de cabelos por seg, a cada um)</p>
+							<p id="priceCao" class="prices">0</p>
+							<div class="buy" onclick="buchimchei()">COMPRAR</div>
+						</div>
+						<div class="powerups" id="caminhonete">
+							<img class="imgmucholoka" src="img/fiat.jpg" alt="">
+							<p class="descricao">Compre um fiatchê para seu cachorro</p>
+							<p id="priceFiat" class="prices">0</p>
+							<div class="buy" onclick="comprarFiatToro()">COMPRAR</div>
+						</div>
+						<div class="powerups" id="facao">
+							<img class="imgmucholoka" src="img/facao.jpg" alt="">
+							<p class="descricao">Um facão muito afiado que já esteve em várias das missões do Valdevir, desta vez ajuda a cortar com precisão cabelo (Chance crítica)</p>
+							<p id="priceFacao" class="prices">0</p>
+							<div class="buy" onclick="afiado()">COMPRAR</div>
+						</div>
+						<div class="powerups">
+							<div id="abobora">
+								<img class="imgmucholokaA" src="img/valdevir.jpg" alt="">
+							</div>
+							<p class="descricao">Construa o seu cabelo</p>
+							<p id="priceFinal" class="prices">10.000</p>
+							<div class="buy" onclick="final()">COMPRAR</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</center>
+		<script>
+			var fase = 1;
+			if (fase == 1) {
+				document.getElementById("valdecute").src = "img/professorciencias.png";
+			}
+			function evolv() {
+				fase++;
+				if (fase >= 4) {
+					fase = 1;
+					document.getElementById("valdecute").src = "img/professorciencias.png";
+				}else{
+					var imgFase = "img/professorfase"+fase+".png";
+					document.getElementById("valdecute").src = imgFase;
+				}
+			}
+			var coquinha = sessionStorage.getItem("coquinha");
+			var cocas = parseInt(coquinha, 10);
+			var bao = sessionStorage.getItem("paçoca");
+			var paçoca = parseInt(bao, 10);
+			var pontos = sessionStorage.getItem("pontis");
+			var pontis = parseInt(pontos, 10);
+			var faca = sessionStorage.getItem("faca");
+			var facoes = parseInt(faca, 10)
+			var tche = sessionStorage.getItem("fiat");
+			var fiat = parseInt(tche, 10)
+			
+			var dogaUp = sessionStorage.getItem("dogUp");
+			var dogUp = parseInt(dogaUp, 10);
+			var capaUp = sessionStorage.getItem("capUp");
+			var capUp = parseInt(capaUp, 10);
+			var facaoaUp = sessionStorage.getItem("facaoUp");
+			var facaoUp = parseInt(facaoaUp, 10)
+
+			var close = document.getElementsByClassName('close')[0];
+			abbreviate_number = function(num, fixed) {
+			  if (num === null) { return null; }
+			  if (num === 0) { return '0'; }
+			  fixed = (!fixed || fixed < 2) ? 2 : fixed;
+			  var b = (num).toPrecision(2).split("e"),
+			      k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 30) / 3)
+			      c = k < 1 ? num.toFixed(0 + fixed) : (num / Math.pow(10, k * 3) ).toFixed(1 + fixed),
+			      d = c < 0 ? c : Math.abs(c),
+			      e = d + ['', 'K', 'milhões', 'bilhões', 'trilhões'][k];
+			  return e;
+			}
+			function div() {
+				document.getElementById('coins').innerHTML = "C "+ abbreviate_number(parseInt(pontis));
+			}
+			function dog() {
+				document.getElementById('boamemo').innerHTML = "Lvl: "+paçoca;
+			}
+			function cola() {
+				document.getElementById('gelada').innerHTML = "Lvl: "+cocas;
+			}
+			function knife() {
+				document.getElementById('sharpness').innerHTML = "Lvl: "+facoes;
+			}
+			function Toreto() {
+				document.getElementById('toro').innerHTML = "Lvl: "+fiat;
+			}
+			function bahGuri() {
+				pontis += 2+cocas;
+				div();
+				sessionStorage.setItem("pontis", pontis);
+				var cabelo = document.createElement("p");
+				cabelo.innerHTML = "+"+(2+cocas);
+				document.body.appendChild(cabelo);
+				cabelo.classList.add("pontos");
+				setTimeout(function () {
+					cabelo.parentNode.removeChild(cabelo)
+				}, 2000)
+				var cabeloC = document.createElement("audio");
+				cabeloC.src = "img/corte.mp3";
+				document.body.appendChild(cabeloC);
+				cabeloC.volume = .3;
+				cabeloC.play();
+				setTimeout(function () {
+					cabeloC.parentNode.removeChild(cabeloC)
+				}, 500)
+				if (facoes >= 1) {
+					var critical = Math.floor(Math.random() * (0 +100));
+					if (critical <= facoes) {
+						pontis += (Math.floor(pontis/2));
+						div();
+						sessionStorage.setItem("pontis", pontis);
+						var critical = document.createElement("p");
+						critical.innerHTML = "Critico!!!";
+						document.body.appendChild(critical);
+						critical.classList.add("critical");
+						setTimeout(function () {
+							critical.parentNode.removeChild(critical)
+						}, 1500)
+					}
+				}
+				corzinhaC();
+				corzinhaF();
+				corzinhaD();
+				corzinhaE();
+				corzinhaT();
+			}
+			function enviar() {
+				var agrvai = document.querySelector('#cod');
+				var ok = agrvai.value;
+				if (ok == "bah") {
+					alert("parabens");
+					pontis += 10000;
+					facoes += 100;
+					cocas += 100;
+					paçoca += 100;
+					console.log(facoes)
+					div();
+					dog();
+					Toreto()
+					cola();
+					knife();
+					sessionStorage.setItem("pontis", pontis);
+					sessionStorage.setItem("paçoca", paçoca);
+					sessionStorage.setItem("coquinha", cocas);
+					sessionStorage.setItem("faca", facoes);
+				}
+			}
+			function final(){
+				if (pontis >= 10000) {
+					pontis = 0;
+					sessionStorage.setItem("pontis", pontis);
+					div();
+					window.location.href = "final.html";
+				}else{
+					alert('ainda não');
+				}
+			}
+			close.onclick = function () {
+				document.getElementById('modal').style.display = "none";	
+			}
+			function shop() {
+				document.getElementById('modal').style.display = "block";
+				document.getElementById('lojinha').style.display = "block";
+				sessionStorage.setItem("pontis", pontis);
+			}
+			function close(){
+				document.getElementById('modal').style.display = "none";
+			}
+			window.onclick = function(event) {
+				if (event.target == modal) {
+					modal.style.display = "none";
+				}
+			}
+			function dogbike() {
+				if (paçoca >= 1){
+					dog();
+					Toreto()
+					var mine = setInterval(frame, 100);
+					function frame() {
+						if (fiat >= 0) {
+							pontis += 1*fiat;
+							sessionStorage.setItem("pontis", pontis);
+						}
+						pontis += 0.1*paçoca;
+						div();
+						sessionStorage.setItem("pontis", pontis);
+						corzinhaC();
+						corzinhaF();
+						corzinhaD();
+						corzinhaT();
+						corzinhaE();
+					}
+				}
+			}
+			function afiado(){
+				if (pontis >= 500+500*facoes) {
+					pontis -= 500+500*facoes;
+					var cabelo = document.createElement("p");
+					cabelo.innerHTML = "- C "+abbreviate_number(parseInt(500+500*facoes));
+					document.body.appendChild(cabelo);
+					cabelo.classList.add("pontos");
+					setTimeout(function () {
+						cabelo.parentNode.removeChild(cabelo)
+					}, 2000)
+					facoes += 1;
+					sessionStorage.setItem("faca", facoes);
+					sessionStorage.setItem("pontis", pontis);
+					div();
+					knife();
+					document.getElementById('priceFacao').innerHTML = "C "+abbreviate_number(parseInt(500+500*facoes));
+					corzinhaF();
+					corzinhaC();
+					corzinhaD();
+					corzinhaT();
+					corzinhaE();
+				}
+			}
+			function comprarFiatToro() {
+				if (pontis >= 1000+1000*fiat) {
+					pontis -= 1000+1000*fiat;
+					var cabelo = document.createElement("p");
+					cabelo.innerHTML = "- C "+abbreviate_number(parseInt(1000+1000*fiat));
+					document.body.appendChild(cabelo);
+					cabelo.classList.add("pontos");
+					setTimeout(function () {
+						cabelo.parentNode.removeChild(cabelo)
+					}, 2000)
+					fiat += 1;
+					sessionStorage.setItem("fiat", fiat);
+					sessionStorage.setItem("pontis", pontis);
+					div();
+					Toreto();
+					document.getElementById('priceFiat').innerHTML = "C "+ abbreviate_number(parseInt(1000+1000*fiat));
+					corzinhaF();
+					corzinhaC();
+					corzinhaD();
+					corzinhaT();
+					corzinhaE();
+				}
+			}
+			function buchimchei() {
+				if (pontis >= 100+100*paçoca) {
+					pontis -= 100+100*paçoca;
+					var cabelo = document.createElement("p");
+					cabelo.innerHTML = "- C "+abbreviate_number(parseInt(100+100*paçoca));
+					document.body.appendChild(cabelo);
+					cabelo.classList.add("pontos");
+					setTimeout(function () {
+						cabelo.parentNode.removeChild(cabelo)
+					}, 2000)
+					paçoca += 1;
+					sessionStorage.setItem("paçoca", paçoca);
+					sessionStorage.setItem("pontis", pontis);
+					div();
+					dogbike();
+					document.getElementById('priceCao').innerHTML = "C "+abbreviate_number(parseInt(100+100*paçoca));
+					corzinhaD();
+					corzinhaC();
+					corzinhaF();
+					corzinhaE();
+				}
+			}
+			function compararcoquinhagelada() {
+				if (pontis >= 50+50*cocas) {
+					pontis -= 50+50*cocas
+					var cabelo = document.createElement("p");
+					cabelo.innerHTML = "- C "+abbreviate_number(parseInt(50+50*cocas));
+					document.body.appendChild(cabelo);
+					cabelo.classList.add("pontos");
+					setTimeout(function () {
+						cabelo.parentNode.removeChild(cabelo)
+					}, 2000)
+					cocas += 1;
+					sessionStorage.setItem("coquinha", cocas);
+					sessionStorage.setItem("pontis", pontis);
+					div();
+					cola();
+					document.getElementById('priceCapivar').innerHTML = "C "+abbreviate_number(parseInt(50+50*cocas));
+					corzinhaC();
+					corzinhaF();
+					corzinhaD();
+					corzinhaT();
+					corzinhaE();
+				}
+			}
+			document.getElementById('priceFacao').innerHTML = "C "+abbreviate_number(parseInt(500+500*facoes));
+			document.getElementById('priceCao').innerHTML = "C "+abbreviate_number(parseInt(100+100*paçoca));
+			document.getElementById('priceCapivar').innerHTML = "C "+abbreviate_number(parseInt(50+50*cocas));
+			document.getElementById('priceFiat').innerHTML = "C "+abbreviate_number(parseInt(1000+1000*fiat));
+			document.getElementById('priceFinal').innerHTML = "C "+abbreviate_number(parseInt(10000));			
+
+			function corzinhaF() {
+				if (pontis >= 500+500*facoes) {
+					document.getElementById('priceFacao').style.color = "green";
+				}else{
+					document.getElementById('priceFacao').style.color = "red";
+				}	
+			}
+			function corzinhaD() {
+				if (pontis >= 100+100*paçoca) {
+					document.getElementById('priceCao').style.color = "green";
+				}else{
+					document.getElementById('priceCao').style.color = "red";
+				}	
+			}
+			function corzinhaC() {
+				if (pontis >= 50+50*cocas) {
+					document.getElementById('priceCapivar').style.color = "green";
+				}else{
+					document.getElementById('priceCapivar').style.color = "red";
+				}	
+			}
+			function corzinhaT() {
+				if (pontis >= 1000+1000*fiat) {
+					document.getElementById('priceFiat').style.color = "green";
+				}else{
+					document.getElementById('priceFiat').style.color = "red";
+				}	
+			}
+			function corzinhaE(){
+				if (pontis >= 10000) {
+					document.getElementById('priceFinal').style.color = "green";
+				}else{
+					document.getElementById('priceFinal').style.color = "red";
+				}
+			}
+			if (paçoca >= 1) {
+				document.getElementById("fiat").style.display = "block"
+				document.getElementById("caminhonete").style.display = "flex";
+			}
+			corzinhaC()
+			corzinhaD();
+			corzinhaF();
+			corzinhaT()
+			corzinhaE();
+			div();
+			dog();
+			Toreto()
+			cola();
+			knife();
+			dogbike();
+		</script>
+	</body>
+</html>

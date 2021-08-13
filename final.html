@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Final!!!</title>
+		<style type="text/css">
+			*{
+				font-family: georgia;
+			}
+			p{
+				font-size: 2rem;
+				font-weight: bold;
+			}
+			#escolha{
+				width: 800px;
+				display: flex;
+				justify-content: space-around;
+			}
+			#aceite{
+				display: none;
+			}
+			img{
+				width: 200px;
+			}
+			body{
+				touch-action: manipulation;
+			}
+			.final{
+				animation: aparecer 3s;
+				opacity: 1;
+			}
+			@keyframes aparecer{
+				from{
+			    	opacity: 0;
+			    }
+				to{
+					opacity: 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+		<p id="a">Escolha seu tipo de cabelo</p>
+		<section id="escolha">
+			<div>
+				<img src="img/valdevirCabeludo.jpg" onclick="escolha('img/valdevirCabeludo.jpg')" alt="">
+			</div>
+			<div>
+				<img src="img/valdevirCabeludo2.jpg" onclick="escolha('img/valdevirCabeludoVDD.jpg')" alt="">
+			</div>
+			<div>
+				<img src="img/valdevirCabeludo3.jpg" onclick="escolha('img/valdevirCabeludo3.jpg')" alt="bah">
+			</div>
+		</section>
+		<section id="aceite">
+			<p>Você conseguiu</p>
+		</section>
+		</center>
+		<script>
+			function escolha (foto){
+				var img = document.createElement("img");
+				img.src = foto;
+				img.classList.add("final");
+				document.getElementById("aceite").appendChild(img);
+				document.getElementById("escolha").style.display = "none"
+				document.getElementById("a").style.display = "none"
+				document.getElementById("aceite").style.display = "block"
+			}
+		</script>
+	</body>
+</html>

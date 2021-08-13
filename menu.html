@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ValdevirClicker</title>
+		<style type="text/css">
+			.botao{
+				width: 100px;
+				border: solid 2px gray;
+				cursor: pointer;
+				font-family: comic sans ms;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			p{
+				font-family: Comic Sans MS;
+				font-size: 2rem;
+				color: black;
+			}
+			img{
+				width: 300px;
+				height: auto;
+			}
+			.botao:hover{
+				background-color: #ccc;
+			}
+			#botoes{
+				justify-content: space-between;
+				width: 300px;
+				display: flex;	
+			}
+		</style>
+		<script>
+			function inicia(argument) {
+				var pontis = 0;
+				var colas = 0;
+				var paçoca = 0;
+				var facoes = 0;
+				var fiat = 0
+				var dogUp = 1;
+
+				sessionStorage.setItem("paçoca", paçoca);
+				sessionStorage.setItem("pontis", pontis);
+				sessionStorage.setItem("coquinha", colas); 
+				sessionStorage.setItem("fiat", fiat); 
+				sessionStorage.setItem("faca", facoes);
+
+				window.location.href = "counter.html";
+			}
+			function sair(){
+				window.location.href = "google.com";
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<p>Valdevir Clicker</p>
+			<img src="img/professorciencias.png" alt="">
+			<section id="botoes">
+				<div class="botao" onclick="inicia()">Iniciar</div>
+				<div class="botao" onclick="sair()">Sair</div>
+			</section>
+		</center>
+	</body>
+</html>
